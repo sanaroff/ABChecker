@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Create client</title>
+</head>
+<body>
+<form action="#" th:action="@{/client-update}" th:object="${clients}" method="post">
+    <label for="ID">ID</label>
+    <input readonly type="number" th:field="*{ID}" id="ID" placeholder="ID">
+    <br/>
+    <label for="Name">Full name</label>
+    <input type="text" th:field="*{Name}" id="Name" placeholder="Name">
+    <br/>
+    <label for="Phone">Phone</label>
+    <input type="text" th:field="*{Phone}" id="Phone" placeholder="Phone">
+    <br/>
+    <label for="Email">Email</label>
+    <input type="text" th:field="*{Email}" id="Email" placeholder="Email">
+    <br/>
+
+    <select th:field="*{Role}" >
+        <option th:each="roles : ${Role}"
+                th:text="${roles}"
+                th:value="${roles}">
+        </option>
+    </select>
+    <br/>
+    <input type="submit" value="Update client">
+</form>
+</body>
+</html>

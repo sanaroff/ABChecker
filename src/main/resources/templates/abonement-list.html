@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Abonements</title>
+</head>
+<body>
+<div th:switch="${abonements}">
+    <h2 th:case="null">Abonements is empty now. Buy. Just buy.</h2>
+    <div th:case="*">
+        <h2>Abonements</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>client</th>
+                <th>startDate</th>
+                <th>endDate</th>
+                <th>price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="abonement: ${abonements}">
+                <td th:text="${abonement.id}"></td>
+                <td th:text="${abonement.name}"></td>
+                <td th:text="${abonement.client}"></td>
+                <td th:text="${abonement.startDate}"></td>
+                <td th:text="${abonement.endDate}"></td>
+                <td th:text="${abonement.price}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/abonement-create">Add new abonement</a></p>
+</div>
+</body>
+</html>

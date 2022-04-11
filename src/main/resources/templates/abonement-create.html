@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action = "#" th:action="@{/abonement-create}" th:object ="${abonement}" method="post">
+    <label for="Name">Name</label>
+    <input type="text" th:field="*{Name}" id="Name" placeholder="Name">
+    <label for="Client">Client</label>
+    <input type="text" th:field="*{Client}" id="Client" placeholder="Client">
+    <label for="StartDate">StartDate</label>
+    <input type="date" th:field="*{StartDate}" id="StartDate" placeholder="Start date">
+    <label for="EndDate">EndDate</label>
+    <input type="date" th:field="*{EndDate}" id="EndDate" placeholder="End date">
+    <label for="Price">Price</label>
+    <input type="number" th:field="*{Price}" id="Price" placeholder="Price">
+    <input type="submit" value="Add abonement">
+</form>
+</body>
+</html>

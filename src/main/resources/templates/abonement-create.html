@@ -8,8 +8,20 @@
 <form action = "#" th:action="@{/abonement-create}" th:object ="${abonement}" method="post">
     <label for="Name">Name</label>
     <input type="text" th:field="*{Name}" id="Name" placeholder="Name">
-    <label for="Client">Client</label>
-    <input type="text" th:field="*{Client}" id="Client" placeholder="Client">
+    <select th:field="*{Client}" >
+        <option th:each="client : ${Client}"
+                th:text="${client.getName()}"
+                th:value="${client.getName()}">
+        </option>
+    </select>
+<!--    <label for="Client">Client</label>-->
+<!--    <input type="text" th:field="*{Client}" id="Client" placeholder="Client">-->
+<!--    <select th:field="*{Client}" >-->
+<!--        <option th:each="client : ${Client}"-->
+<!--                th:text="${client.getName()}"-->
+<!--                th:value="${client.getName()}">-->
+<!--        </option>-->
+<!--    </select>-->
     <label for="StartDate">StartDate</label>
     <input type="date" th:field="*{StartDate}" id="StartDate" placeholder="Start date">
     <label for="EndDate">EndDate</label>

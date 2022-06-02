@@ -10,12 +10,8 @@ import java.util.Collections;
 public class AbcheckerApplication {
 
 	public static void main(String[] args) {
+//		ReactorDebugAgent.init();
 		SpringApplication.run(AbcheckerApplication.class, args);
-
-		/*SpringApplication app =new SpringApplication(AbcheckerApplication.class);
-				app.setDefaultProperties(Collections
-				.singletonMap("server.port", "8083"));
-		app.run(args);*/
 	}
 
 }

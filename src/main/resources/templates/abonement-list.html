@@ -28,6 +28,7 @@
                 <td th:text="${abonement.startDate}"></td>
                 <td th:text="${abonement.endDate}"></td>
                 <td th:text="${abonement.price}"></td>
+                <td><a th:href="@{abonement-delete/{ID}(ID=${abonement.id})}">Delete</a></td>
             </tr>
             </tbody>
         </table>

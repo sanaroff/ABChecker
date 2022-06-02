@@ -21,7 +21,7 @@ import java.util.UUID;
 @Data
 @Entity
 @Table(name = "abonements")
-public class Abonement{
+public class Abonement implements IAbonement{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")

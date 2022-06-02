@@ -26,7 +26,7 @@
                 <td th:text="${client.email}"></td>
                 <td><a th:href="@{client-update/{ID}(ID=${client.ID})}">Edit</a></td>
                 <td><a th:href="@{client-delete/{ID}(ID=${client.ID})}">Delete</a></td>
-                <td><a th:href="@{abonement-list/{ID}(ID=${client.ID})}">Abonements</a></td>
+                <td><a th:href="@{abonement-list/{ID}}">Abonements</a></td>
             </tr>
             </tbody>
         </table>

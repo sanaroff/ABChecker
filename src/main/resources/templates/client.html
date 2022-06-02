@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Create client</title>
+<body>
+<form action="#" th:action="@{client}" th:object="${clients}" method="get">
+  <label for="ID">ID</label>
+  <input readonly type="number" th:field="*{ID}" id="ID" placeholder="ID">
+  <br/>
+  <label for="Name">Full name</label>
+  <input type="text" th:field="*{Name}" id="Name" placeholder="Name">
+  <br/>
+  <label for="Phone">Phone</label>
+  <input type="text" th:field="*{Phone}" id="Phone" placeholder="Phone">
+  <br/>
+  <label for="Email">Email</label>
+  <input type="text" th:field="*{Email}" id="Email" placeholder="Email">
+  <br/>
+  <td><a th:href="@{abonement-list/{ID}}">My abonements</a></td>
+  <td><a th:href="@{/client/}+${ID}+@{/events}">My events</a></td>
+  <td><a th:href="@{/client/}+${ID}+@{/event-create}">Add event</a></td>
+</form>
+</body>
+</html>

@@ -15,7 +15,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name="user")
-public class Instructor {
+public class Instructor implements IClient {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID")

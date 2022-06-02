@@ -2,8 +2,8 @@ package my.local.project.controller;
 
 import my.local.project.model.Abonement;
 import my.local.project.service.AbonementService;
+import my.local.project.service.ClientService;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,9 +14,11 @@ import java.util.List;
 @Controller
 public class AbonementController {
 
+    private final ClientService clientService;
     private final AbonementService abonementService;
 
-    public AbonementController(AbonementService abonementService) {
+    public AbonementController(ClientService clientService, AbonementService abonementService) {
+        this.clientService = clientService;
         this.abonementService = abonementService;
     }
 
@@ -28,7 +30,8 @@ public class AbonementController {
     }
 
     @GetMapping("/abonement-create")
-    public String createAbonementForm(Abonement abonement) {
+    public String createAbonementForm(Abonement abonement, Model model) {
+        model.addAttribute("Client", clientService.findAllClients());
         return "abonement-create";
     }
 
